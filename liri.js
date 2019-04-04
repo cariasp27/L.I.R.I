@@ -1,11 +1,16 @@
 ////////// Requires //////////
 require("dotenv").config();
+var fs = require("fs");
 var Spotify = require('node-spotify-api');
 var keys = require("./key");
 var axios = require("axios");
 var moment = require("moment");
 ////////// Spotify //////////
 var spotify = new Spotify(keys.spotify);
+// grab input from node command line and assign to variables
+var command = process.argv[2];
+var input = process.argv.slice(3).join(" ");
+
 ////////// Functions for API Calls //////////
 // OMDB API Object //
 var omdb = {
@@ -42,9 +47,10 @@ var spoti = {
       var title = data.tracks.items[0].name;
       var bndnme = data.tracks.items[0].album.artists[0].name;
       var bumname = data.tracks.items[0].album.name;
+      var link = data.tracks.items[0].preview_url;
       // log info to the console
       console.log("Spotify found...");
-      console.log(title + " by " + bndnme + " from " + bumname );
+      console.log(title + " by " + bndnme + " from " + bumname +"\nlink: " + link );
     
       });
     }
@@ -70,13 +76,14 @@ var bit = {
           );
     }
 };
-// grab input from node command line and assign to variables
-var command = process.argv[2];
-var input = process.argv[3];
+
 // switch case for handling input and running corresponding functions
 switch(command){
     case "movie-this":
-    omdb.movthis(input);
+    if (!input){ omdb.movthis("Mr.Nobody")
+  } else {omdb.movthis(input);
+  };
+    
     break;
     
     case "concert-this":
@@ -84,6 +91,24 @@ switch(command){
     break;
 
     case "spotify-this-song":
+    if(!input){spoti.spotthis("The Sign Ace of Base");
+  }
+    else {
     spoti.spotthis(input);
+    }
+    break;
+    // 4. `node liri.js do-what-it-says`
+
+    // * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+ 
+    //   * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+ 
+    //   * Edit the text in random.txt to test out the feature for movie-this and concert-this.
+ 
+    case "do-what-it-says":
+    fs.readFile("random.txt", function (err, data){
+      if (err){throw err}
+      else{ spoti.spotthis(data)}
+    })
     break;
 };
