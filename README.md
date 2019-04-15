@@ -3,11 +3,12 @@
 
 ## What Can I Search For?
 LIRI is capable of...
-    * Searching BandsInTown for concerts by a       specific artist.
 
-    * Searching Spotify for info about a specific song.
+    - Searching BandsInTown for concerts by a       specific artist.
 
-    * Searching OMDB for info about a specific movie.
+    - Searching Spotify for info about a specific song.
 
-    * do-what-it-says....see what happens...
+    - Searching OMDB for info about a specific movie.
+
+    - do-what-it-says....see what happens...
 
