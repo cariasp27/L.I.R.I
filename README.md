@@ -3,6 +3,11 @@
 
 ## What Can I Search For?
 LIRI is capable of...
+<<<<<<< HEAD
+=======
+
+    * Searching BandsInTown for concerts by a specific artist.
+>>>>>>> 59a32b2ee225d3ead31f8a440d807358b032eb25
 
     - Searching BandsInTown for concerts by a       specific artist.
 
