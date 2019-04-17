@@ -32,10 +32,14 @@ L.I.R.I. uses very specific syntax in tandem with user input to deliver the info
 The commands and their syntax are as follows...
 
     - node liri spotify-this-song <song name>
+
 ![spotify-this-song](images/spotthisex.png)
+
     - node liri movie-this <movie name>
+
 ![movie-this](images/movthisex.png)
 
     - node liri concert-this < artist/band name>
+    
 ![concert-this](images/conthisex.png)
 
