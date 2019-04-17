@@ -33,7 +33,6 @@ The commands and their syntax are as follows...
 
     - node liri spotify-this-song <song name>
 
-Will display:
 ![spotify-this-song](images/spotthisex.png)
 
     - node liri movie-this <movie name>
