@@ -39,7 +39,7 @@ The commands and their syntax are as follows...
 
 ![movie-this](images/movthisex.png)
 
-    - node liri concert-this < artist/band name>
-    
+    - node liri concert-this <artist/band name>
+
 ![concert-this](images/conthisex.png)
 
