@@ -43,3 +43,5 @@ The commands and their syntax are as follows...
 
 ![concert-this](images/conthisex.png)
 
+This simple application was created for the Case Western Reserve Coding Bootcamp.
+
